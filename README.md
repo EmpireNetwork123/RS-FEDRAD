@@ -24,6 +24,8 @@ This comprehensive feature set provides crucial behavioral insights into Ransomw
 
 ---
 
+![Architecture Diagram](RS-FEDRAD/RS-FEDRAD.jpg)
+
 ## Setup Instructions
 1. Data Preprocessing
 Navigate to the src folder and run:python src/data_preprocessing.py
