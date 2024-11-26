@@ -12,15 +12,10 @@ This comprehensive feature set provides crucial behavioral insights into Ransomw
 ## Table of Contents
 - [Abstract](#abstract)
 - [Key Contributions](#key-contributions)
-- [System Requirements](#system-requirements)
-- [Folder Structure](#folder-structure)
 - [Setup Instructions](#setup-instructions)
 - [Experimental Results](#experimental-results)
-- [Citation](#citation)
-- [Contact](#contact)
-
+- [System Requirements](#system-requirements)
 ---
-
 ## Key Contributions
 1. **TTP-Enhanced Dataset**: Maps ransomware features (API calls, DLL interactions) to TTPs for enriched detection capabilities.
 2. **Hybrid CNN-LSTM Model**: Combines spatial and temporal pattern analysis for superior results.
@@ -28,6 +23,38 @@ This comprehensive feature set provides crucial behavioral insights into Ransomw
 4. **Adversarial Resilience**: Robust under FGSM and BIM attacks with minimal accuracy drop (~0.20%).
 
 ---
+
+## Setup Instructions
+1. Data Preprocessing
+Navigate to the src folder and run:python src/data_preprocessing.py
+This will:
+Standardize, shuffle, and split the dataset.
+Divide the data into 10 client-specific datasets for federated training.
+
+2. Federated Training
+A. **Initialize the Flower Server**: Run the server script:python src/start_server.py
+The server is configured for 10 clients by default. Modify the start_server.py file to adjust the number of clients or training rounds
+B. **Start Clients**:  In parallel, execute the following command for each client:python scripts/run_federated-client.py
+The server will begin training once at least 2 clients have connected. Additional clients can join during training
+C. **Results**:  Training metrics (e.g., accuracy, precision, recall, F1-score) and history for each client are saved in results/experiment_results.
+
+4. Adversarial Training:
+Follow the federated training setup, but use the adversarial client scripts:
+For BIM attacks:python scripts/adversarial-bim_run_client.py
+For FGSM attacks:python scripts/adversarial-fgsm_run_client.py
+
+5. Centralized Training:
+Run the centralized training script:python scripts/Centralized-run.py
+This script combines all client datasets into a single repository and trains the model centrally
+
+## Experimental Results:
+RS-FEDRAD achieves state-of-the-art performance with:
+
+Accuracy: 99.90%
+Average Federated Accuracy: 99.5%
+Resilience to Adversarial Attacks with minimal/negligible accuracy degradation (~0.20%).
+Visualizations in results/experiment_plots, 
+Metrics and history in results/experiment_results
 
 ## System Requirements
 - **Python**: 3.9+
@@ -41,3 +68,8 @@ This comprehensive feature set provides crucial behavioral insights into Ransomw
 Install dependencies using:
 ```bash
 pip install -r requirements.txt
+
+
+
+
+
