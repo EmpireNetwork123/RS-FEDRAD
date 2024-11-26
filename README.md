@@ -1,6 +1,7 @@
 # RS-FEDRAD: Robust and Scalable Federated Ransomware Detection Using TTP-Enhanced Dataset 
 
 ![Python](https://img.shields.io/badge/python-3.9-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Architecture Diagram](https://github.com/your-username/RS-FEDRAD/blob/master/RS-FEDRAD/RS-FEDRAD.jpg)
 
 ## Abstract
 Ransomware continues to evolve as a significant cybersecurity threat, employing advanced evasion techniques such as polymorphism and obfuscation to bypass detection mechanisms. Conventional detection approaches fail to detect this modern Ransomware because they usually implore either single or limited feature sets. Additionally, they heavily rely on centralized architecture, thereby causing privacy and scalability issues. To address these limitations, we present RS-FEDRAD, a robust and scalable Federated Learning (FL)-based ransomware detection system. RS-FEDRAD integrates FL with deep dynamic analysis, using novel Tactics, Techniques, and Procedures (TTP)-enhanced dataset to create a decentralized, privacy-preserving solution. 
@@ -23,8 +24,6 @@ This comprehensive feature set provides crucial behavioral insights into Ransomw
 4. **Adversarial Resilience**: Robust under FGSM and BIM attacks with minimal accuracy drop (~0.20%).
 
 ---
-
-![Architecture Diagram](RS-FEDRAD/RS-FEDRAD.jpg)
 
 ## Setup Instructions
 1. Data Preprocessing
