@@ -35,19 +35,19 @@ Standardize, shuffle, and split the dataset.
 Divide the data into 10 client-specific datasets for federated training.
 
 2. Federated Training
-A. **Initialize the Flower Server**: Run the server script:python src/start_server.py
+A. **Initialize the Flower Server**: Run the server script:python src/start_server.py. 
 The server is configured for 10 clients by default. Modify the start_server.py file to adjust the number of clients or training rounds
-B. **Start Clients**:  In parallel, execute the following command for each client:python scripts/run_federated-client.py
+B. **Start Clients**:  In parallel, execute the following command for each client:python scripts/run_federated-client.py. 
 The server will begin training once at least 2 clients have connected. Additional clients can join during training
 C. **Results**:  Training metrics (e.g., accuracy, precision, recall, F1-score) and history for each client are saved in results/experiment_results.
 
 4. Adversarial Training:
-Follow the federated training setup, but use the adversarial client scripts:
-For BIM attacks:python scripts/adversarial-bim_run_client.py
-For FGSM attacks:python scripts/adversarial-fgsm_run_client.py
+Follow the federated training setup, but use the adversarial client scripts: 
+For BIM attacks: Navigate to script folder and run adversarial-bim_run_client.py
+Likewise For FGSM attacks: Navigate to script folder and run adversarial-fgsm_run_client.py
 
 5. Centralized Training:
-Run the centralized training script:python scripts/Centralized-run.py
+Run the Centralized-run.py under the script folder. 
 This script combines all client datasets into a single repository and trains the model centrally
 
 ## Experimental Results:
